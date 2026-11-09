@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f8f6f0" />
+  <meta name="description" content="把工作、生活、娱乐与学习放进一个温暖有序的个人空间。" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+  <title>日常之间 · 个人管理工作台</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="主导航">
+      <div class="brand"><div class="brand-mark">日</div><div><strong>日常之间</strong><small>PERSONAL SPACE</small></div></div>
+      <div class="sidebar-label">我的空间</div>
+      <nav id="desktop-nav"></nav>
+      <div class="sidebar-bottom"><div class="sidebar-note"><span>✦</span><p>把每一天<br>过成喜欢的样子。</p></div><div class="storage-note">数据保存在当前浏览器中</div></div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar"><div class="mobile-brand"><div class="brand-mark">日</div><strong>日常之间</strong></div><div class="breadcrumb" id="breadcrumb">我的空间 <span>/</span> 工作台</div><div class="top-actions"><span class="today-chip" id="today-chip"></span><button class="icon-button" id="search-button" aria-label="搜索记录">⌕</button><button class="avatar" aria-label="个人空间">我</button></div></header>
+      <div id="app-content"></div>
+    </main>
+  </div>
+  <nav class="bottom-nav" id="mobile-nav" aria-label="移动端导航"></nav>
+  <button class="floating-add" id="floating-add" aria-label="快速添加">＋</button>
+  <dialog id="editor-dialog"><form id="record-form" method="dialog"><div class="dialog-head"><div><span class="eyebrow">QUICK CAPTURE</span><h2>记录一件新事</h2></div><button type="button" class="close-button" id="close-dialog" aria-label="关闭">×</button></div><label>所属模块<select id="record-module" name="module"></select></label><label>分类<select id="record-category" name="category"></select></label><label>标题<input id="record-title" name="title" maxlength="80" placeholder="比如：准备周五的项目汇报" required /></label><label>日期 <span class="optional">可选</span><input id="record-date" name="date" type="date" /></label><label>备注 <span class="optional">可选</span><textarea id="record-note" name="note" rows="3" maxlength="300" placeholder="写下一些细节…"></textarea></label><div class="dialog-actions"><button type="button" class="button ghost" id="cancel-dialog">取消</button><button type="submit" class="button primary">保存记录 <span>↗</span></button></div></form></dialog>
+  <dialog id="search-dialog"><div class="dialog-head"><div><span class="eyebrow">FIND SOMETHING</span><h2>搜索我的记录</h2></div><button type="button" class="close-button" id="close-search" aria-label="关闭">×</button></div><input id="search-input" placeholder="搜索标题、分类或备注…" autocomplete="off" /><div id="search-results"></div></dialog>
+  <dialog id="learning-dialog"><form id="learning-form"><div class="dialog-head"><div><span class="eyebrow">MY LEARNING</span><h2 id="learning-dialog-title">添加学习内容</h2></div><button type="button" class="close-button" id="close-learning" aria-label="关闭">×</button></div><div id="learning-fields"></div><div class="dialog-actions"><button type="button" class="button ghost" id="cancel-learning">取消</button><button type="submit" class="button primary">保存 <span>↗</span></button></div></form></dialog>
+  <script src="./learning.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
+
